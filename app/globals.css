@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", "Arial Narrow", sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FAFAF7;
+  color: #1E1B1B;
+}
+
+::selection {
+  background-color: #D0DB57;
+  color: #1E1B1B;
+}
+
+/* Transmission-line divider: a hairline "conductor" with pole ticks,
+   used throughout as the site's structural signature instead of a plain rule. */
+.line-divider {
+  position: relative;
+  height: 1px;
+  background-color: #DEE2D6;
+  width: 100%;
+}
+.line-divider::before,
+.line-divider::after {
+  content: "";
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background-color: #3AB54A;
+}
+.line-divider::before {
+  left: 8%;
+}
+.line-divider::after {
+  left: 92%;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #3AB54A;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
